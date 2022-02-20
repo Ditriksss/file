@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>0b186994-b5c1-47e4-bbfb-55f93b9bb316</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.1" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.7.17" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.7.2.18" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AmazonSQS">
+      <HintPath>..\..\CommonPlatform\AmazonSQS\bin\Debug\net5.0\AmazonSQS.dll</HintPath>
+    </Reference>
+    <Reference Include="IntegrationEvent">
+      <HintPath>..\..\CommonPlatform\AmazonSQS\bin\Debug\net5.0\IntegrationEvent.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
