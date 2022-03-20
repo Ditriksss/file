@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File", "File\File.csproj", "{E2C9CDBE-2312-47EA-8586-D403A36B0E69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "File", "File\File.csproj", "{E2C9CDBE-2312-47EA-8586-D403A36B0E69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{2D480640-2A5A-4093-93D7-7354DD00E6F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceUnitTests", "UnitTests\ServiceUnitTests\ServiceUnitTests.csproj", "{BDA3264F-6083-4A84-A511-B9C1CCE572F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{E2C9CDBE-2312-47EA-8586-D403A36B0E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2C9CDBE-2312-47EA-8586-D403A36B0E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2C9CDBE-2312-47EA-8586-D403A36B0E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDA3264F-6083-4A84-A511-B9C1CCE572F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDA3264F-6083-4A84-A511-B9C1CCE572F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDA3264F-6083-4A84-A511-B9C1CCE572F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDA3264F-6083-4A84-A511-B9C1CCE572F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BDA3264F-6083-4A84-A511-B9C1CCE572F3} = {2D480640-2A5A-4093-93D7-7354DD00E6F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6D1833F7-0373-4614-85DD-110A547FBBDA}
