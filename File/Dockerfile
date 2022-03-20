@@ -1,10 +1,17 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /app
-COPY publish .
-ENTRYPOINT ["dotnet", "File.dll"]
 
-#dotnet publish File.csproj -c Release -o ./publish/
-#docker build -t file-service .
-#docker run -p 9000:8080 --name file-service file-service
+# Copy everything
+COPY . ./
+# Restore as distinct layers
+RUN dotnet nuget add source http://host.docker.internal:8111/httpAuth/app/nuget/feed/_Root/LocalNugetServer/v3/index.json --name TeamCity --username admin --password eyJ0eXAiOiAiVENWMiJ9.RjJKX2diYi1aV3FZVXdLZW15WXlNeTY4TFFz.ZWI2MzFhYTktN2UwMy00ZWYyLWE1MjUtODNlYTYwMzk0Mzlk --store-password-in-clear-text
+RUN dotnet restore
+# Build and publish a release
+
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
+WORKDIR /app
+COPY --from=build /app/out .
+ENTRYPOINT ["dotnet", "File.dll"]
